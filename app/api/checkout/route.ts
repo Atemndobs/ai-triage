@@ -67,7 +67,11 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ url: session.url });
   } catch (error) {
-    const message = error instanceof Error ? error.message : "Could not start Stripe checkout.";
-    return NextResponse.json({ error: message }, { status: 500 });
+    console.error("Stripe checkout error:", error);
+    // Return clear error for debugging
+    return NextResponse.json({ 
+      error: "STRIPE_ERROR_2026-03-04: " + (error instanceof Error ? error.message : String(error)),
+      timestamp: new Date().toISOString()
+    }, { status: 500 });
   }
 }
