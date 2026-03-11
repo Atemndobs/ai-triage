@@ -40,7 +40,7 @@ export async function POST(request: Request) {
           customerId: session.customer,
           subscriptionId: session.subscription,
           customerEmail: session.customer_email,
-          planId: session.subscription_data?.metadata?.planId
+          planId: session.metadata?.planId
         });
 
         // TODO: Send confirmation email to customer

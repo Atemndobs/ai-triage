@@ -1,0 +1,20 @@
+[2026-03-10T22:06:43.528Z] [debug] Notifying parent we're ready
+[2026-03-10T22:06:43.530Z] [debug] Received message from parent: {
+  cacheFile: '/Users/atem/sites/ai-triage/.cache/com.vercel.cli/package-updates/vercel-latest.json',
+  distTag: 'latest',
+  name: 'vercel',
+  updateCheckInterval: 86400000
+}
+[2026-03-10T22:06:43.530Z] [debug] Disconnecting from parent
+[2026-03-10T22:06:43.530Z] [debug] Checking lock file: /Users/atem/sites/ai-triage/.cache/com.vercel.cli/package-updates/vercel-latest.lock
+[2026-03-10T22:06:43.530Z] [debug] Initializing lock file with pid 69343
+[2026-03-10T22:06:43.531Z] [debug] Fetching https://registry.npmjs.org/-/package/vercel/dist-tags
+[2026-03-10T22:06:43.561Z] [error] Failed to get package info: Error: getaddrinfo ENOTFOUND registry.npmjs.org
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'registry.npmjs.org'
+}
+[2026-03-10T22:06:43.561Z] [debug] Releasing lock file: /Users/atem/sites/ai-triage/.cache/com.vercel.cli/package-updates/vercel-latest.lock
+[2026-03-10T22:06:43.562Z] [debug] Worker finished successfully!

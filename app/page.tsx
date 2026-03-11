@@ -49,6 +49,21 @@ const featureItems = [
   }
 ];
 
+const workflowSteps = [
+  {
+    title: "Ingest",
+    detail: "Tickets from Email, Slack, WhatsApp, and SMS are captured in one pipeline."
+  },
+  {
+    title: "Classify",
+    detail: "AI detects urgency, sentiment, topic, and the best team owner in seconds."
+  },
+  {
+    title: "Route",
+    detail: "Rules + confidence scoring push each case to the right queue instantly."
+  }
+];
+
 const testimonials = [
   {
     quote: "AI Triage cut our manual sorting by 78% in week one.",
@@ -79,7 +94,7 @@ export default function Home() {
             Stop Drowning in Support Tickets
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-            AI Triage Routes Everything Instantly - Save 10+ Hours/Week.
+            AI Triage Routes Everything Instantly - Save 10+ Hours/Week
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Button asChild size="lg">
@@ -119,6 +134,15 @@ export default function Home() {
         <div className="mb-8 flex items-center gap-3">
           <Activity className="h-5 w-5 text-accent" />
           <h2 className="text-2xl font-semibold">Features</h2>
+        </div>
+        <div className="mb-6 grid gap-4 rounded-2xl border border-border/80 bg-card/40 p-4 md:grid-cols-3 md:p-6">
+          {workflowSteps.map((step, index) => (
+            <div key={step.title}>
+              <p className="text-xs font-semibold uppercase tracking-wide text-accent">Step {index + 1}</p>
+              <p className="mt-1 text-base font-semibold">{step.title}</p>
+              <p className="mt-2 text-sm text-muted-foreground">{step.detail}</p>
+            </div>
+          ))}
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {featureItems.map((item) => {

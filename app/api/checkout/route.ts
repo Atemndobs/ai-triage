@@ -33,6 +33,9 @@ export async function POST(request: Request) {
       mode: "subscription",
       success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/cancel`,
+      metadata: {
+        planId
+      },
       line_items: [
         {
           quantity: 1,
@@ -68,10 +71,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ url: session.url });
   } catch (error) {
     console.error("Stripe checkout error:", error);
-    // Return clear error for debugging
-    return NextResponse.json({ 
-      error: "STRIPE_ERROR_2026-03-04: " + (error instanceof Error ? error.message : String(error)),
-      timestamp: new Date().toISOString()
-    }, { status: 500 });
+    return NextResponse.json({ error: "Unable to create checkout session. Please try again." }, { status: 500 });
   }
 }
